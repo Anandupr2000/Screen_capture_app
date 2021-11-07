@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Record Screen</string>
+    <string name="permission_text">permission_text</string>
+    <string name="menu_about_title">About</string>
+    <string name="menu_privacy_policy">Privacy Policy</string>
+    <string name="menu_donate">Donate</string>
+    <string name="menu_help">help</string>
+</resources>
