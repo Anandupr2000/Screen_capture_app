@@ -37,6 +37,7 @@ import com.example.recordscreen.R;
 import com.example.recordscreen.databinding.ActivitymainBinding;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -128,8 +129,14 @@ public class MainActivity extends AppCompatActivity {
         mediaProjectionCallback = new MediaProjectionCallback();
         mediaProjection = mediaProjectionManager.getMediaProjection(resultCode,data);
         mediaProjection.registerCallback(mediaProjectionCallback,null);
-        virtualDisplay = createVirtualDisplay();
-        mediaRecorder.start();
+
+        try {
+            mediaRecorder.prepare();
+            mediaRecorder.start();
+        } catch (Exception e) {
+            System.out.println("************** Exception occured *************");
+            e.printStackTrace();
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
